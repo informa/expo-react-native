@@ -6,6 +6,10 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import FlatListDemo from "./FlatListDemo";
+import FlexDemo from "./FlexDemo";
+import CardDemo from "./CardDemo";
+import AnimationDemo from "./AnimationDemo";
 
 const ios = Platform.OS === "ios";
 
@@ -35,10 +39,31 @@ const HomeScreen = (props) => {
       <Text style={{ fontSize: 40 }}>Home!</Text>
       <TextButton
         onPress={() => {
-          props.navigation.navigate("ChildScreen");
+          props.navigation.navigate("Flat List Demo");
         }}
       >
-        Go to child screen
+        Flat List Demo
+      </TextButton>
+      <TextButton
+        onPress={() => {
+          props.navigation.navigate("Flex Demo");
+        }}
+      >
+        Flex Demo
+      </TextButton>
+      <TextButton
+        onPress={() => {
+          props.navigation.navigate("Animation Demo");
+        }}
+      >
+        Animation Demo
+      </TextButton>
+      <TextButton
+        onPress={() => {
+          props.navigation.navigate("Card Demo");
+        }}
+      >
+        Card Demo
       </TextButton>
     </View>
   );
@@ -160,6 +185,10 @@ const StackNavigation = ({ navigation }) => (
         ),
       }}
     />
+    <Stack.Screen name="Flat List Demo" component={FlatListDemo} />
+    <Stack.Screen name="Flex Demo" component={FlexDemo} />
+    <Stack.Screen name="Animation Demo" component={AnimationDemo} />
+    <Stack.Screen name="Card Demo" component={CardDemo} />
     <Stack.Screen name="ChildScreen" component={ChildScreen} />
   </Stack.Navigator>
 );

@@ -6,7 +6,7 @@ const User = ({ name, bio, avatar }) => {
   return (
     <View style={styles.user}>
       <Image source={{ uri: avatar }} style={styles.avatar} />
-      <View>
+      <View style={styles.content}>
         <Text style={{ fontSize: 20 }}>{name}</Text>
         <Text>{bio}</Text>
       </View>
@@ -18,14 +18,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  content: {
+    flex: 1,
+  },
   user: {
-    margin: 10,
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: 20,
+    marginRight: 20,
     flexDirection: "row",
   },
   avatar: {
     height: 50,
     width: 50,
     borderRadius: 25,
+    marginRight: 20,
   },
 });
 
