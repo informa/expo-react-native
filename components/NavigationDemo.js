@@ -8,6 +8,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import FlatListDemo from "./FlatListDemo";
 import FlexDemo from "./FlexDemo";
+import AsyncStorageDemo from "./AsyncStorageDemo";
 import CardDemo from "./CardDemo";
 import AnimationDemo from "./AnimationDemo";
 
@@ -64,6 +65,13 @@ const HomeScreen = (props) => {
         }}
       >
         Card Demo
+      </TextButton>
+      <TextButton
+        onPress={() => {
+          props.navigation.navigate("Async Storage Demo");
+        }}
+      >
+        Async Storage Demo
       </TextButton>
     </View>
   );
@@ -189,6 +197,7 @@ const StackNavigation = ({ navigation }) => (
     <Stack.Screen name="Flex Demo" component={FlexDemo} />
     <Stack.Screen name="Animation Demo" component={AnimationDemo} />
     <Stack.Screen name="Card Demo" component={CardDemo} />
+    <Stack.Screen name="Async Storage Demo" component={AsyncStorageDemo} />
     <Stack.Screen name="ChildScreen" component={ChildScreen} />
   </Stack.Navigator>
 );
